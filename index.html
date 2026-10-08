@@ -1,0 +1,91 @@
+1. index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Network Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🌐 Internet Network Simulator</h1>
+    <p>Advanced Data Structures - Graph & Dijkstra's Algorithm</p>
+</header>
+
+<div class="container">
+
+    <aside class="panel">
+
+        <h2>Network Controls</h2>
+
+        <label>Device Name</label>
+        <input type="text" id="deviceName" placeholder="Example: Router1">
+
+        <button onclick="addDevice()">Add Device</button>
+
+        <hr>
+
+        <h3>Connect Devices</h3>
+
+        <label>Device 1</label>
+        <select id="device1"></select>
+
+        <label>Device 2</label>
+        <select id="device2"></select>
+
+        <label>Connection Cost</label>
+        <input type="number" id="cost" value="1" min="1">
+
+        <button onclick="addConnection()">Connect</button>
+
+        <hr>
+
+        <h3>Find Shortest Route</h3>
+
+        <label>Source</label>
+        <select id="source"></select>
+
+        <label>Destination</label>
+        <select id="destination"></select>
+
+        <button class="routeBtn" onclick="findShortestPath()">
+            Find Shortest Path
+        </button>
+
+        <button class="resetBtn" onclick="resetNetwork()">
+            Reset Network
+        </button>
+
+        <hr>
+
+        <div class="result">
+            <h3>Result</h3>
+            <p id="pathResult">No route calculated.</p>
+            <p id="costResult"></p>
+        </div>
+
+    </aside>
+
+    <main class="network-area">
+
+        <h2>Network Graph</h2>
+
+        <canvas id="networkCanvas"></canvas>
+
+        <div class="legend">
+            <span><b class="blue"></b> Device</span>
+            <span><b class="green"></b> Shortest Path</span>
+            <span><b class="red"></b> Failed/Unused Link</span>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
